@@ -7,6 +7,7 @@ import os
 import docx2txt
 
 docs = []
+docspath = []
 
 def add_files():
     filepath = filedialog.askopenfilename(initialdir="C:\\Users\\Admin\\Documents",
@@ -19,7 +20,8 @@ def add_files():
         print(file)
         entry1.insert(tk.END,f"{os.path.basename(filepath)} successfully added\n")
         entry1.configure(state="disabled")
-        docs.append(filepath)
+        docs.append(file)
+        docspath.append(filepath)
     except:
         entry1.configure(state="normal")
         entry1.insert(tk.END,f"{os.path.basename(filepath)} is not a .docx file \n")
@@ -31,7 +33,7 @@ def check_files():
     result = (SequenceMatcher(None, docs[0], docs[1]).ratio()) * 100
     print(f"{round(result)}%")
     entry0.configure(state="normal")
-    entry0.insert(tk.END, f"{os.path.basename(docs[0])} and {os.path.basename(docs[1])} is {round(result)}% similar\n")
+    entry0.insert(tk.END, f"{os.path.basename(docspath[0])} and {os.path.basename(docspath[1])} is {round(result)}% similar\n")
     entry0.configure(state="disabled")
     
 
