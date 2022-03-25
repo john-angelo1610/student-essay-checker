@@ -1,0 +1,62 @@
+/* Fill viewport, hide scroll bar */
+html, body
+{
+    height: 100%;
+    overflow: hidden;
+}
+
+.background {
+    background-image: url("../images/resize-background.png");
+    background-size: cover ;
+    background-repeat: no-repeat;
+    min-width: 100vh;
+}
+
+/* Ensure content is below navbar */
+div.container-fluid
+{
+    padding-top: 56px;
+}
+
+/* Fill viewport */
+div.container-fluid, div.row, div.col, div.jumbotron
+{
+    height: 100%;
+}
+
+/* Remove padding within column */
+div.col
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Add padding around form */
+form
+{
+    padding: 15px;
+}
+
+/* Wrap and scroll preformatted text */
+pre
+{
+    height: 100%;
+    overflow: auto;
+    padding: 15px;
+    white-space: pre-wrap;
+}
+
+/* Highlight spans */
+span
+{
+    background-color: #ff0;
+}
+
+#showFilessList {
+	 font-size: 18px;
+}
+
+p {
+  font-size: 0.875em; /* 14px/16=0.875em */
+}
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+
+    <!-- Bootstrap CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css' ) }}" rel="stylesheet"/>
+
+    <link href="{{ url_for('static', filename='css/styles.css' ) }}" rel="stylesheet"/>
+
+    <title>Find Similarities</title>
+
+</head>
+<body class="background">
+
+<nav class="navbar fixed-top" style="background-color: white; opacity: 0.8;">
+    <a class="navbar-brand" href="#" style="color: black"> Student Essay Checker System </a>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        {% block body %}{% endblock %}
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/jquery.js' ) }}"></script>
+<script src="{{ url_for('static', filename='js/popper.min.js' ) }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js' ) }}"></script>
+
+</body>
+</html>

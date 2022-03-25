@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css' ) }}"
+          crossorigin="anonymous">
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js' ) }}"
+            crossorigin="anonymous"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}"
+          crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="{{ url_for('static', filename='js/jquery.js' ) }}"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+    <script>
+        /*$(document).ready(function(){
+            $('#fi').change(function(){
+                if ($('input[name="pattern"]').val() != '' ){
+                    alert('Pattern file uploaded Successfully');
+                }
+            })
+
+            $('#files').change(function(){
+                if ($('input[name="file"]').val() != '' ){
+                    alert('Text files uploaded Successfully');
+                }
+            })
+        })*/
+    </script>
+</head>
+
+
+<body class="background" onunload="">
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+    <div class="card px-1 py-4">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('check') }}" method="POST" enctype="multipart/form-data">
+            <div class="card-body text-center">
+                <h6 class="information mt-4" style="font-size: 25px">Student Essay Checker System</h6>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <p class="information pt-4">Select text files</p>
+                            <label for="files" class="btn"><!--img
+                                    src="{{ url_for('static', filename='images/button.png') }}"--></label>
+                            <input class="form-control" name="file" type="file" id="files"
+                                   style="" accept="application/msword,
+  application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple required>
+                        </div>
+                    </div>
+                </div>
+				
+				    <div id="showFilessList"></div>
+
+    <script>
+        inputTypeFile = document.getElementById('files')
+        showFilessList = document.getElementById('showFilessList')
+
+        inputTypeFile.addEventListener('change', function() {
+            if (this.files.length > 0) {
+                for (var i = 0; i < this.files.length; i++) {
+                    showFilessList.innerHTML += "<p>" + this.files.item(i).name + "<span class='closeIT'>X</span></p>"
+
+
+                }
+            }
+            closeIT = document.getElementsByClassName('closeIT')
+
+            arrayFormCloseBtn = [...closeIT];
+            arrayFormCloseBtn.forEach((onebyone) => {
+                onebyone.addEventListener('click', function(e) {
+                    e.target.parentElement.remove()
+                    if (showFilessList.firstChild == null) {
+                        alert('you cleared all files, select again to view the list')
+                        inputTypeFile.value = ''
+                    }
+                })
+            })
+
+
+        })
+    </script>
+
+				
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <p class="information pt-4">Select a pattern file</p>
+                            <label for="fi" class="btn"><!--img
+                                    src="{{ url_for('static', filename='images/button.png') }}"--></label>
+                            <input class="form-control" name="pattern" type="file" id="fi"
+                                   style="" accept="application/msword,
+  application/vnd.openxmlformats-officedocument.wordprocessingml.document" required>
+                        </div>
+                    </div>
+                </div>
+                <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"><small class="agree-text">Submit to check
+                    plagiarism</small></div>
+                <button class="btn btn-block btn-styles confirm-button">Confirm</button>
+            </div>
+        </form>
+    </div><div id="showFilessList2"></div>
+
+	
+</div>
+</body>
+</html>
