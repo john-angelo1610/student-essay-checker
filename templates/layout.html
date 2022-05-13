@@ -6,9 +6,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-	<meta http-equiv="Pragma" content="no-cache" />
-	<meta http-equiv="Expires" content="0" />
 
     <!-- Bootstrap CSS -->
     <link href="{{ url_for('static', filename='css/bootstrap.min.css' ) }}" rel="stylesheet"/>
@@ -19,12 +16,17 @@
 
 </head>
 <body class="background">
-
-<nav class="navbar fixed-top" style="background-color: white; opacity: 0.8;">
-    <a class="navbar-brand" href="#" style="color: black"> Student Essay Checker </a>
+<nav class="navbar">
+    <a class="navbar-brand" href="index.html">Student Essay Checker System</a>
 </nav>
 
 <div class="container-fluid">
+    <div class="row justify-content-end">
+        <div class="col-md-3">
+            <a class="btn btn-primary" href="{{ url_for('index') }}"
+               style="background-color:#303e48; border: none; margin-top: 10px;">Back</a>
+        </div>
+    </div>
     <div class="row">
         {% block body %}{% endblock %}
     </div>
