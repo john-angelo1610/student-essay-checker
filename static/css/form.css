@@ -3,7 +3,8 @@
     background: linear-gradient(180deg, #28002C 0.01%, #000A3F 40.1%, #2F227D 63.54%, #000000 76.56%, #260017 95.31%, #2D0000 100%);
     background-size: cover ;
     background-repeat: no-repeat;
-    min-width: 100vh;
+    min-height: 100vh;
+    width: 100%;
 }
 
 .btn-styles {
