@@ -49,7 +49,7 @@ def check():
         pos = filenames
         found_text = ['Similar Pattern not found']
 
-    return render_template('compare.html', pattern_text=found_text, pos=pos)
+    return render_template('compare.html', pattern_text=found_text, pos=pos, pattern_name=pattern.filename)
 
 
 def allowed_file(filename):  # function to check allowed extensions
